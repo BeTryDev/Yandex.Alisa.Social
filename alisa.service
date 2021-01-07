@@ -1,0 +1,16 @@
+[Unit]
+Description=Example service file for Yandex.Alisa
+
+[Service]
+ExecStart=/usr/bin/python3 -m flask run --host=0.0.0.0 --cert=adhoc
+ExecStop=
+WorkingDirectory=/root/alisa
+Restart=always
+Environment="LC_ALL=C.UTF-8"
+Environment="LANG=C.UTF-8"
+Environment="FLASK_APP=main.py"
+Environment="VK_LOGIN="
+Environment="VK_PASS="
+
+[Install]
+WantedBy=multi-user.target
